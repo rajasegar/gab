@@ -1,0 +1,15 @@
+{
+  "name": "gab",
+  "version": "1.0.0",
+  "description": "A Cli tool to build github actions workflow from wherever you are",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [ "github-actions", "cli", "workflow"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^7.1.0"
+  }
+}
