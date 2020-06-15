@@ -4,6 +4,20 @@
 
 const inquirer = require('inquirer');
 
+const workflowModePrompt = {
+  type: 'list',
+  name: 'mode',
+  message: 'How do you want to setup a workflow?',
+  choices: ['Choose from Templates', 'Setup a Custom Workflow'],
+};
+
+const starterPrompt = {
+  type: 'list',
+  name: 'category',
+  messages: 'Which type of workflow you need?',
+  choices: ['Continuous Integration', 'Automation', 'SVG Icons'],
+};
+
 const commandsPrompt = [
   {
     type: 'input',
@@ -44,8 +58,30 @@ const commandsPrompt = [
 ];
 
 function main() {
-  inquirer.prompt(commandsPrompt).then((answers) => {
-    //console.log(answers);
+  inquirer.prompt(workflowModePrompt).then((answers) => {
+    console.log(answers);
+    if (answers.mode === 'Choose from Templates') {
+      inquirer.prompt(starterPrompt).then((answers) => {
+        console.log(answers);
+        require('dotenv').config();
+        const { Octokit } = require('@octokit/rest');
+        const octokit = new Octokit({ auth: process.env.GH_PAT });
+
+        octokit.repos
+          .get({
+            owner: 'actions',
+            repo: 'starter-workflows',
+          })
+          .then((data) => {
+            console.log(data);
+          });
+      });
+    } else {
+      inquirer.prompt(commandsPrompt).then((answers) => {
+        console.log(answers);
+      });
+    }
+    /*
     const workflow = `
     name: ${answers.name}
     on:
@@ -61,6 +97,7 @@ function main() {
     `;
 
     console.log(workflow);
+    */
   });
 }
 
