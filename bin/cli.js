@@ -66,14 +66,37 @@ function main() {
         require('dotenv').config();
         const { Octokit } = require('@octokit/rest');
         const octokit = new Octokit({ auth: process.env.GH_PAT });
+        const pathNamesHash = {
+          'Continuous Integration': 'ci',
+          Automation: 'automation',
+          'SVG Icons': 'icons',
+        };
+        const path = pathNamesHash[answers.category];
 
         octokit.repos
-          .get({
+          .getContent({
             owner: 'actions',
             repo: 'starter-workflows',
+            path,
           })
-          .then((data) => {
-            console.log(data);
+          .then((response) => {
+            //console.log(response.data);
+            const choices = response.data
+              .filter((d) => d.type !== 'dir')
+              .map((d) => {
+                return d.name.replace('.yml', '');
+              });
+
+            const choosePrompt = {
+              type: 'list',
+              name: 'worflow',
+              message: ' Choose workflow',
+              choices,
+            };
+
+            inquirer.prompt(choosePrompt).then((answers) => {
+              console.log(answers);
+            });
           });
       });
     } else {
