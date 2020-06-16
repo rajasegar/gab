@@ -1,6 +1,7 @@
 'use strict';
 
 const inquirer = require('inquirer');
+const writeActionFile = require('./writeActionFile');
 
 const starterPrompt = {
   type: 'list',
@@ -46,7 +47,24 @@ module.exports = function () {
         };
 
         inquirer.prompt(choosePrompt).then((answers) => {
-          console.log(answers);
+          let { workflow } = answers;
+          let ymlName = workflow.charAt(0).toLowerCase() + workflow.slice(1);
+          ymlName = `${ymlName}.yml`;
+
+          const ymlFile = response.data.find((y) => y.name === ymlName);
+
+          octokit.repos
+            .getContent({
+              owner: 'actions',
+              repo: 'starter-workflows',
+              path: `${path}/${ymlName}`,
+            })
+            .then((response) => {
+              const ymlData = Buffer.from(response.data.content, 'base64');
+              console.log(ymlData.toString());
+
+              writeActionFile(ymlName, ymlData);
+            });
         });
       });
   });

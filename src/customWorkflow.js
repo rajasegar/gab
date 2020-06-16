@@ -1,6 +1,7 @@
 'use strict';
 
 const inquirer = require('inquirer');
+const writeActionFile = require('./writeActionFile');
 
 const commandsPrompt = [
   {
@@ -44,5 +45,23 @@ const commandsPrompt = [
 module.exports = function () {
   inquirer.prompt(commandsPrompt).then((answers) => {
     console.log(answers);
+    const workflow = `
+    name: ${answers.name}
+    on:
+      ${answers.on}
+
+    jobs:
+      ${answers.jobId}:
+        name: ${answers.jobName}
+        runs-on: ${answers.runsOn}
+        steps:
+
+
+    `;
+
+    console.log(workflow);
+    const fileName = `{answers.name}.yml`;
+
+    writeActionFile(fileName, workflow);
   });
 };

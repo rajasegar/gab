@@ -21,23 +21,6 @@ function main() {
     } else {
       customWorkflow();
     }
-    /*
-    const workflow = `
-    name: ${answers.name}
-    on:
-      ${answers.on}
-
-    jobs:
-      ${answers.jobId}:
-        name: ${answers.jobName}
-        runs-on: ${answers.runsOn}
-        steps:
-
-
-    `;
-
-    console.log(workflow);
-    */
   });
 }
 
