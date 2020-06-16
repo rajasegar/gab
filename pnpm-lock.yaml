@@ -4,6 +4,7 @@ dependencies:
   inquirer: 7.1.0
 devDependencies:
   eslint: 7.1.0
+  eslint-config-prettier: 6.11.0_eslint@7.1.0
   eslint-plugin-node: 11.1.0_eslint@7.1.0
   eslint-plugin-prettier: 3.1.3_eslint@7.1.0+prettier@2.0.5
   prettier: 2.0.5
@@ -349,6 +350,16 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
+  /eslint-config-prettier/6.11.0_eslint@7.1.0:
+    dependencies:
+      eslint: 7.1.0
+      get-stdin: 6.0.0
+    dev: true
+    hasBin: true
+    peerDependencies:
+      eslint: '>=3.14.1'
+    resolution:
+      integrity: sha512-oB8cpLWSAjOVFEJhhyMZh6NOEOtBVziaqdDQ86+qhDHFbZXoRTM7pNSvFRfW/W/L/LrQ38C99J5CGuRBBzBsdA==
   /eslint-plugin-es/3.0.1_eslint@7.1.0:
     dependencies:
       eslint: 7.1.0
@@ -584,6 +595,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
+  /get-stdin/6.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-jp4tHawyV7+fkkSKyvjuLZswblUtz+SQKzSWnBbii16BuZksJlU1wuBYXY75r+duh/llF1ur6oNwi+2ZzjKZ7g==
   /get-stream/4.1.0:
     dependencies:
       pump: 3.0.0
@@ -1225,6 +1242,7 @@ specifiers:
   '@octokit/rest': ^18.0.0
   dotenv: ^8.2.0
   eslint: ^7.1.0
+  eslint-config-prettier: ^6.11.0
   eslint-plugin-node: ^11.1.0
   eslint-plugin-prettier: ^3.1.3
   inquirer: ^7.1.0
