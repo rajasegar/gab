@@ -18,3 +18,23 @@ npm install github-actions-builder
 ```
 gab
 ```
+
+There are 3 modes of choosing workflow:
+* Choose from Starter Templates
+* Copy existing workflow
+* Setup a Custom Workflow
+
+### Choose from Starter Templates
+This will help you to choose the pre-defined templates from 
+[actions/starter-workflows](https://github.com/actions/starter-workflows) based
+on categories like `Automation`, `CI`, etc.,
+
+### Copy existing workflow
+This will help you to copy existing workflows from various repositories either yours or
+others. All you need to do is to give the repo info in the form of:
+`<user-name>/<repo-name>` and choose the workflow you want to copy.
+
+### Setup a Custom Workflow
+This will ask a series of questions to seup your workflow.
+
+

@@ -44,7 +44,6 @@ const commandsPrompt = [
 
 module.exports = function () {
   inquirer.prompt(commandsPrompt).then((answers) => {
-    console.log(answers);
     const workflow = `
     name: ${answers.name}
     on:

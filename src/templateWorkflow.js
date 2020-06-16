@@ -12,7 +12,6 @@ const starterPrompt = {
 
 module.exports = function () {
   inquirer.prompt(starterPrompt).then((answers) => {
-    console.log(answers);
     require('dotenv').config();
     const { Octokit } = require('@octokit/rest');
     const octokit = new Octokit({ auth: process.env.GH_PAT });
@@ -30,7 +29,6 @@ module.exports = function () {
         path,
       })
       .then((response) => {
-        //console.log(response.data);
         const choices = response.data
           .filter((d) => d.type !== 'dir')
           .map((d) => {
