@@ -36,6 +36,8 @@ This will help you to copy existing workflows from various repositories either y
 others. All you need to do is to give the repo info in the form of:
 `<user-name>/<repo-name>` and choose the workflow you want to copy.
 
+![copy-workflow-demo](copy-demo.gif)
+
 ### Setup a Custom Workflow [BETA]
 This will ask a series of questions to seup your workflow.
 This is still a Work-In-Progress, it will not give exhaustive options to setup your workflow.
