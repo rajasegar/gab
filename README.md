@@ -29,6 +29,8 @@ This will help you to choose the pre-defined templates from
 [actions/starter-workflows](https://github.com/actions/starter-workflows) based
 on categories like `Automation`, `CI`, etc.,
 
+![choose-workflow-demo](choose-demo.gif)
+
 ### Copy existing workflow
 This will help you to copy existing workflows from various repositories either yours or
 others. All you need to do is to give the repo info in the form of:
