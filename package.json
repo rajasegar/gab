@@ -1,5 +1,5 @@
 {
-  "name": "gab",
+  "name": "github-actions-builder",
   "version": "1.0.0",
   "description": "A Cli tool to build github actions workflow from wherever you are",
   "main": "index.js",
