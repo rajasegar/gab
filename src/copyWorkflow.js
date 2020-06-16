@@ -26,7 +26,7 @@ module.exports = function () {
         const choosePrompt = {
           type: 'list',
           name: 'workflow',
-          message: ' Choose workflow',
+          message: 'Choose workflow',
           choices: response.data,
         };
 
