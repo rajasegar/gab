@@ -42,4 +42,5 @@ others. All you need to do is to give the repo info in the form of:
 This will ask a series of questions to seup your workflow.
 This is still a Work-In-Progress, it will not give exhaustive options to setup your workflow.
 
+![custom-workflow-demo](custom-demo.gif)
 
