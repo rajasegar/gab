@@ -4,7 +4,8 @@
   "description": "A Cli tool to build github actions workflow from wherever you are",
   "main": "index.js",
   "bin": {
-    "gab": "bin/cli.js"
+    "gab": "bin/cli.js",
+    "github-actions-builder": "bin/cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

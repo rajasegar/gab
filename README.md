@@ -4,7 +4,7 @@
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![npm version](http://img.shields.io/npm/v/github-actions-builder.svg?style=flat)](https://npmjs.org/package/github-actions-builder "View this project on npm")
 
-A CLI tool to build github actions workflows from wherever you are.
+A CLI tool to build github actions workflows from the terminal.
 
 ## install
 
@@ -38,7 +38,7 @@ others. All you need to do is to give the repo info in the form of:
 ![copy-workflow-demo](copy-demo.gif)
 
 ### Setup a Custom Workflow [BETA]
-This will ask a series of questions to seup your workflow.
+This will ask a series of questions to setup your workflow.
 This is still a Work-In-Progress, it will not give exhaustive options to setup your workflow.
 
 ![custom-workflow-demo](custom-demo.gif)
