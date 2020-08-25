@@ -49,8 +49,6 @@ module.exports = function () {
           let ymlName = workflow.charAt(0).toLowerCase() + workflow.slice(1);
           ymlName = `${ymlName}.yml`;
 
-          const ymlFile = response.data.find((y) => y.name === ymlName);
-
           octokit.repos
             .getContent({
               owner: 'actions',
