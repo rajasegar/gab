@@ -1,6 +1,6 @@
 # github-actions-builder
 
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Frajasegar%2Fgithub-actions-builder%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/rajasegar/gab/goto?ref=master)
+[Build and Deploy](https://github.com/rajasegar/gab/workflows/Build%20and%20Deploy/badge.svg)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![npm version](http://img.shields.io/npm/v/github-actions-builder.svg?style=flat)](https://npmjs.org/package/github-actions-builder "View this project on npm")
 
