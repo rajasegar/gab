@@ -24,27 +24,29 @@ module.exports = function () {
       })
       .then((response) => {
         const choosePrompt = {
-          type: 'list',
-          name: 'workflow',
+          type: 'checkbox',
+          name: 'workflows',
           message: 'Choose workflow',
           choices: response.data,
         };
 
         inquirer.prompt(choosePrompt).then((answers) => {
-          let { workflow } = answers;
+          let { workflows } = answers;
 
-          octokit.repos
-            .getContent({
-              owner,
-              repo,
-              path: `.github/workflows/${workflow}`,
-            })
-            .then((response) => {
-              const ymlData = Buffer.from(response.data.content, 'base64');
-              console.log(ymlData.toString());
+          workflows.forEach((workflow) => {
+            octokit.repos
+              .getContent({
+                owner,
+                repo,
+                path: `.github/workflows/${workflow}`,
+              })
+              .then((response) => {
+                const ymlData = Buffer.from(response.data.content, 'base64');
+                console.log(ymlData.toString());
 
-              writeActionFile(workflow, ymlData);
-            });
+                writeActionFile(workflow, ymlData);
+              });
+          });
         });
       });
   });
